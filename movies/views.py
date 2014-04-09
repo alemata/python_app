@@ -187,6 +187,7 @@ def movie_edit(request, movie_id):
 
     context_dict = {'movie_id': movie_id}
     #ACA SI IRIA LO DEL FORM PARA LA MOVIE
+    #CON EL IF POST...
     try:
         current_movie = Movie.objects.get(id=movie_id)
 
@@ -195,7 +196,7 @@ def movie_edit(request, movie_id):
     except Movie.DoesNotExist:
         pass
 
-    return render_to_response('movies/movie.html', context_dict, context)
+    return render_to_response('movies/movie_edit.html', context_dict, context)
 
 
 def add_rating_to_movie(request, movie_id):
