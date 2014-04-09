@@ -1,0 +1,21 @@
+{% extends 'movies/base.html' %}
+
+
+{% block title %}{{ Movies }}{% endblock %}
+
+{% block body_block %}
+
+<div style="margin-top:50px;margin-left:20px">
+    <strong>{{ boldmessage }}</strong><br/>
+    {% if movies %}
+        <ul>
+            {% for movie in movies %}
+                <li><a href="/movies/movie/{{ movie.id }}">{{ movie.title }}  ({{ movie.year }})</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <strong>There are no movies present.</strong>
+    {% endif %}
+</div>
+
+{% endblock %}

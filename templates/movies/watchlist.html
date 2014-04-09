@@ -1,0 +1,21 @@
+{% extends 'movies/base.html' %}
+{% load static %}
+
+
+{% block title %}{{ watchlist }}{% endblock %}
+
+
+{% block body_block %}
+<div style="margin-top:50px;margin-left:20px">
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+  <h4>Pelis para mirar!</h4>
+
+  {% for movie in watchlist %}
+  <li><a href="/movies/movie/{{ movie.id }}">{{ movie.title }} ({{ movie.year }})</a></li>
+  {% endfor %}
+
+  <a href="/movies/">All movies</a>
+</div>
+
+{% endblock %}
