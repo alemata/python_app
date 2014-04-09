@@ -178,7 +178,7 @@ def movie_show(request, movie_id):
     except Movie.DoesNotExist:
         pass
 
-    return render_to_response('movies/movie_show.html', context_dict, context)
+    return render_to_response('movies/movie.html', context_dict, context)
 
 
 
@@ -186,6 +186,7 @@ def movie_edit(request, movie_id):
     context = RequestContext(request)
 
     context_dict = {'movie_id': movie_id}
+    #ACA SI IRIA LO DEL FORM PARA LA MOVIE
     try:
         current_movie = Movie.objects.get(id=movie_id)
 
